@@ -1,0 +1,335 @@
+/* Imports */
+@import url("reset.css");
+@import url("pygment.css");
+@import url("typogrify.css");
+@import url("fonts.css");
+
+/***** Global *****/
+/* Body */
+body {
+    background: #ffffff;
+    color: #000305;
+    font-size: 87.5%; /* Base font size: 14px */
+    font-family: 'Merriweather','Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.429;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+	box-sizing: border-box;
+}
+
+/* Headings */
+h1 {font-size: 2em;
+	text-align: center;
+	color: #000000;
+	line-height: .6;
+    font-family: 'Merriweather', arial, serif;
+	font-weight: 400;
+	padding-top: 10px;
+
+}
+h2 {font-size: 1.571em}	/* 22px */
+h3 {font-size: 1.429em}	/* 20px */
+h4 {font-size: 1.286em}	/* 18px */
+h5 {font-size: 1.143em}	/* 16px */
+h6 {font-size: 1em}		/* 14px */
+
+h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: .8em;
+    font-family: 'Merriweather', arial, serif;
+}
+
+h3, h4, h5, h6 { margin-top: .8em; }
+
+hr { border: 2px solid #EEEEEE; }
+
+/* Anchors */
+a {outline: 0;}
+a img {border: 0px; text-decoration: none;}
+a:link, a:visited {
+	color: #000305;
+	padding: 0 1px;
+	text-decoration: underline;
+}
+a:hover, a:active {
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px #333;
+}
+
+h1 a:hover {
+    background-color: inherit
+}
+
+/* Paragraphs */
+div.line-block,
+p { margin-top: 1em;
+    margin-bottom: 1em;}
+
+strong, b {font-weight: bold;}
+em, i {font-style: italic;}
+
+/* Lists */
+ul {
+	list-style: outside disc;
+	margin: 0em 0 0 1.5em;
+}
+
+ol {
+	list-style: outside decimal;
+	margin: 0em 0 0 1.5em;
+}
+
+li { margin-top: 0.5em;
+     margin-bottom: 1em; }
+
+.post-info {
+    float:right;
+    margin:10px;
+    padding:5px;
+}
+
+.post-info p{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.readmore { float: right }
+
+dl {margin: 0 0 1.5em 0;}
+dt {font-weight: bold;}
+dd {margin-left: 1.5em;}
+
+pre{background-color:  rgb(238, 238, 238); padding: 10px; margin: 10px; overflow: auto;}
+
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+/***** Layout *****/
+.body {clear: both; margin: 0 auto; max-width: 800px;}
+img { max-width: 100%; }
+img.right, figure.right, div.figure.align-right {
+    float: right;
+    margin: 0 0 2em 2em;
+}
+img.left, figure.left, div.figure.align-left {
+    float: left;
+    margin: 0 2em 2em 0;
+}
+
+/* .rst support */
+div.figure img, figure img {  /* to fill figure exactly */
+    max-width: 100%;
+}
+div.figure p.caption, figure p.caption { /* margin provided by figure */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*
+	Header
+*****************/
+#banner {
+	text-align:center;
+}
+
+	/* Banner */
+	#banner h1 {
+		color: #ffffff;
+		line-height: 1.5;
+		height: 165px;
+	}
+
+	#banner h1 a:link, #banner h1 a:visited {
+		display: block;
+		font-weight: bold;
+		text-decoration: none;
+		position:fixed;
+		z-index:1000;
+		width: 100%;
+		top:0;
+		left:0;
+		right:0;
+		padding-top:15px;
+    	height:125px;
+		background: #980000;
+    	background-size:100%;
+	}
+	#banner h1 a:hover, #banner h1 a:active {
+		text-shadow: none;
+		display: block;
+		font-weight: bold;
+		text-decoration: none;
+		position:fixed;
+		width: 100%;
+		top:0;
+		left:0;
+		right:0;
+		padding-top:15px;
+    	height:125px;
+		background: #980000;
+    	background-size:100%;
+	}
+
+	#banner h1 strong {font-size: 0.36em; font-weight: normal;}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar {
+    background-color: #980000;
+    overflow: visible;  /* Ensure the dropdown is not clipped */
+}
+
+/* Nav menu */
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    position: relative; /* Ensure dropdown content respects this context */
+    z-index: 1; /* Ensure that the menu is on top */
+}
+
+/* Nav item */
+.nav-item {
+    position: relative;
+}
+
+/* Nav links */
+.nav-item a, .dropbtn {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+}
+.nav-item a:hover {
+    background-color: #830000;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #980000;
+    min-width: 160px;
+    top: 100%;
+    left: 0;
+    z-index: 2; 
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown-content li a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content li a:hover {
+    background-color: #830000;
+}
+
+.nav-item:hover .dropdown-content {
+    display: block;
+}
+
+
+
+/*
+	Body
+*****************/
+#content {
+	background: #fff;
+	margin-bottom: 2em;
+	overflow: hidden;
+	padding: 20px 20px;
+	max-width: 760px;
+
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+/* Socials */
+#socials {
+	margin: 0 auto 3em 3em;
+	overflow: hidden;
+	position:fixed;
+	bottom:0;
+	left:0;
+	float: left;
+	max-width: 615px;
+	padding: 0 3px;
+}
+
+#socials ul {list-style: none; margin: 0;}
+#socials li {border-bottom: 1px solid #fff; float: left; margin: 0 30px 0 0; max-width: 185px;}
+#socials h2 {
+	color: #980000;
+	font-size: 1.429em;
+	margin-bottom: .25em;
+	padding: 0 3px;
+}
+
+#socials a:link, #socials a:visited {
+	color: #980000;
+	display: block;
+	border-bottom: 1px solid #F4E3E3;
+	text-decoration: none;
+	padding: .3em .25em;
+}
+
+#socials a:hover, #socials a:active {color: #fff;}
+
+/* Gallery */
+.gallery-container {
+	box-sizing: border-box;
+    margin-top: 50px; /* Space at the top */
+    display: flex;
+    justify-content: center; /* Center gallery horizontally */
+    width: 100%;
+	margin-bottom:200px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates four equal columns */
+    gap: 15px; /* Space between images */
+    max-width: 1000px; /* Max width for the gallery container */
+    width: 100%;
+	align-self:center;
+}
+
+.gallery-item {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+	transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
